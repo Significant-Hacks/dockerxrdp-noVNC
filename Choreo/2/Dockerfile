@@ -7,7 +7,8 @@ RUN dpkg --add-architecture i386 \
  && DEBIAN_FRONTEND=noninteractive apt install -y \
     wine qemu-kvm fonts-wqy-zenhei xz-utils dbus-x11 curl firefox-esr \
     gnome-system-monitor mate-system-monitor git xfce4 xfce4-terminal \
-    tightvncserver wget
+    tightvncserver wget \
+ && rm -rf /var/lib/apt/lists/*
 
 # Download and unpack noVNC
 RUN wget https://github.com/novnc/noVNC/archive/refs/tags/v1.2.0.tar.gz \
